@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조선컴퓨터학회 - 소개</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <!-- 配置Tailwind自定义颜色和字体 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#C92127', // 朝鲜国旗红色
+                        secondary: '#003478', // 朝鲜国旗蓝色
+                        accent: '#FFD700', // 金色作为强调色
+                        dark: '#1A1A1A',
+                        light: '#F5F5F5'
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans Korean', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+            .transition-custom {
+                transition: all 0.3s ease-in-out;
+            }
+        }
+    </style>
+    
+    <!-- 自定义样式 -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- 导航栏 -->
+    <header id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-white/90 shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fa fa-microchip text-primary text-2xl"></i>
+                <h1 class="text-xl md:text-2xl font-bold text-secondary">조선컴퓨터학회</h1>
+            </div>
+            
+            <!-- 桌面导航 -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#about" class="text-gray-700 hover:text-primary transition-custom font-medium">소개</a>
+                <a href="#activities" class="text-gray-700 hover:text-primary transition-custom font-medium">주요활동</a>
+                <a href="#organization" class="text-gray-700 hover:text-primary transition-custom font-medium">조직구성</a>
+                <a href="#contact" class="text-gray-700 hover:text-primary transition-custom font-medium">연락처</a>
+            </nav>
+            
+            <!-- 移动端菜单按钮 -->
+            <button id="menuBtn" class="md:hidden text-gray-700 focus:outline-none">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+        
+        <!-- 移动端导航菜单 -->
+        <div id="mobileMenu" class="md:hidden hidden bg-white shadow-lg absolute w-full">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="#about" class="text-gray-700 hover:text-primary py-2 transition-custom">소개</a>
+                <a href="#activities" class="text-gray-700 hover:text-primary py-2 transition-custom">주요활동</a>
+                <a href="#organization" class="text-gray-700 hover:text-primary py-2 transition-custom">조직구성</a>
+                <a href="#contact" class="text-gray-700 hover:text-primary py-2 transition-custom">연락처</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 英雄区域 -->
+    <section class="relative pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-r from-secondary to-primary text-white">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0 bg-[url('https://picsum.photos/id/180/1200/600')] bg-cover bg-center"></div>
+        </div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-shadow animate-fade-in">조선컴퓨터학회</h1>
+                <p class="text-xl md:text-2xl mb-8 opacity-90 animate-fade-in" style="animation-delay: 0.2s">정보기술의 발전을 통한 국가발전과 인류혁명에 기여합니다</p>
+                <a href="#about" class="inline-block bg-white text-primary hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg shadow-lg transition-custom animate-fade-in" style="animation-delay: 0.4s">
+                    더 알아보기 <i class="fa fa-arrow-down ml-2"></i>
+                </a>
+            </div>
+        </div>
+        
+        <!-- 装饰性波浪 -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" class="w-full h-auto">
+                <path fill="#f9fafb" fill-opacity="1" d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,100L1360,100C1280,100,1120,100,960,100C800,100,640,100,480,100C320,100,160,100,80,100L0,100Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- 关于我们 -->
+    <section id="about" class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-secondary">학회 소개</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-8"></div>
+                <p class="text-lg text-gray-600">조선컴퓨터학회는 정보기술 분야의 발전을 주도하고, 국가의 과학기술 발전에 기여하기 위해 설립된 전문 학术단체입니다.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="animate-fade-in">
+                    <img src="https://picsum.photos/id/160/600/400" alt="조선컴퓨터학회 활동 이미지" class="rounded-lg shadow-xl w-full h-auto">
+                </div>
+                
+                <div class="space-y-6 animate-fade-in" style="animation-delay: 0.2s">
+                    <div class="flex items-start">
+                        <div class="bg-primary text-white p-3 rounded-full mr-4">
+                            <i class="fa fa-history text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-secondary mb-2">설립 목적</h3>
+                            <p class="text-gray-600">조선컴퓨터학회는 1977년에 설립되어, 컴퓨터 과학 기술의 발전과 그 응용을 촉진하고, 전문 인력의 양성을 통해 국가의 정보화 발전을 이끌고 있습니다.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-primary text-white p-3 rounded-full mr-4">
+                            <i class="fa fa-bullseye text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-secondary mb-2">목표와 미션</h3>
+                            <p class="text-gray-600">학회는 컴퓨터 과학 기술의 발전을 통하여 생산력 향상과 국민 생활 수준 제고에 기여하고, 국제 학술 교류를 통해 조선의 과학기술 위상을 높이는 것을 목표로 하고 있습니다.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-primary text-white p-3 rounded-full mr-4">
+                            <i class="fa fa-users text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-secondary mb-2">회원 구성</h3>
+                            <p class="text-gray-600">현재 회원 수는 5,000명 이상으로, 컴퓨터 과학자, 기술자, 교수, 연구원 등 정보기술 분야의 전문가들로 구성되어 있습니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 主要活动 -->
+    <section id="activities" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-secondary">주요 활동</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-8"></div>
+                <p class="text-lg text-gray-600">조선컴퓨터학회는 다양한 학술 활동을 통해 컴퓨터 기술의 발전과 확산을 이끌고 있습니다.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 活动卡片 1 -->
+                <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden card-hover animate-fade-in">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/id/0/600/400" alt="학술대회" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-secondary mb-3">학술대회 개최</h3>
+                        <p class="text-gray-600 mb-4">매년 국내 학술대회를 개최하여 최신 연구成果를 발표하고 교류합니다. 또한, 국제 학술대회에积極的으로參加하여 국제적 네트워크를 구축하고 있습니다.</p>
+                        <a href="#" class="text-primary font-medium hover:underline inline-flex items-center">
+                            자세히 보기 <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 活动卡片 2 -->
+                <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden card-hover animate-fade-in" style="animation-delay: 0.1s">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/id/1/600/400" alt="학술지 발행" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-secondary mb-3">학술지 발행</h3>
+                        <p class="text-gray-600 mb-4">「조선컴퓨터학회지」를 정기적으로 발행하여 최신 연구成果와 기술 동향을 전파합니다. 학회지는 국내외 학계에서 높은 평가를 받고 있습니다.</p>
+                        <a href="#" class="text-primary font-medium hover:underline inline-flex items-center">
+                            자세히 보기 <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 活动卡片 3 -->
+                <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden card-hover animate-fade-in" style="animation-delay: 0.2s">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/id/2/600/400" alt="교육 프로그램" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-secondary mb-3">교육 프로그램</h3>
+                        <p class="text-gray-600 mb-4">컴퓨터 기술 교육 프로그램을 운영하여 전문 인력을 양성합니다. 다양한 수준의 교육과정과 워크샵을 통해 실무 능력을 향상시킵니다.</p>
+                        <a href="#" class="text-primary font-medium hover:underline inline-flex items-center">
+                            자세히 보기 <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 活动卡片 4 -->
+                <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden card-hover animate-fade-in" style="animation-delay: 0.3s">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/id/3/600/400" alt="기술 개발" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-secondary mb-3">기술 개발 지원</h3>
+                        <p class="text-gray-600 mb-4">산업체와의 협력을 통해 실용적인 컴퓨터 기술 개발을 지원합니다. 새로운 기술의 상용화와 응용을 촉진하여 경제 발전에 기여합니다.</p>
+                        <a href="#" class="text-primary font-medium hover:underline inline-flex items-center">
+                            자세히 보기 <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 活动卡片 5 -->
+                <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden card-hover animate-fade-in" style="animation-delay: 0.4s">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/id/4/600/400" alt="국제 교류" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-secondary mb-3">국제 교류</h3>
+                        <p class="text-gray-600 mb-4">해외 컴퓨터학회와의 교류를 통해 국제적 협력을 촉진합니다. 국제 학술회의 개최와 참가, 연구자 교환 프로그램을 통해 글로벌 네트워크를 구축합니다.</p>
+                        <a href="#" class="text-primary font-medium hover:underline inline-flex items-center">
+                            자세히 보기 <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 活动卡片 6 -->
+                <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden card-hover animate-fade-in" style="animation-delay: 0.5s">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/id/5/600/400" alt="컴퓨터 경진대회" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-secondary mb-3">컴퓨터 경진대회</h3>
+                        <p class="text-gray-600 mb-4">청소년과 학생들을 대상으로 컴퓨터 경진대회를 개최하여 창의적 사고와 문제 해결 능력을 길러줍니다. 우수한 인재를 발굴하고 지원합니다.</p>
+                        <a href="#" class="text-primary font-medium hover:underline inline-flex items-center">
+                            자세히 보기 <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 组织结构 -->
+    <section id="organization" class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-secondary">조직 구성</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-8"></div>
+                <p class="text-lg text-gray-600">조선컴퓨터학회는 다음과 같은 조직으로 구성되어 있으며, 체계적인 운영을 통해 활동을 전개하고 있습니다.</p>
+            </div>
+            
+            <div class="max-w-5xl mx-auto">
+                <!-- 组织架构图 -->
+                <div class="relative overflow-x-auto">
+                    <div class="min-w-[768px] pb-8">
+                        <!-- 会长 -->
+                        <div class="text-center mb-12 animate-fade-in">
+                            <div class="inline-block bg-primary text-white p-6 rounded-lg shadow-lg">
+                                <h3 class="text-xl font-bold mb-2">회장</h3>
+                                <p>김철호 박사</p>
+                            </div>
+                        </div>
+                        
+                        <!-- 副会长和秘书长 -->
+                        <div class="flex justify-center gap-8 mb-12 animate-fade-in" style="animation-delay: 0.1s">
+                            <div class="bg-secondary text-white p-5 rounded-lg shadow-lg">
+                                <h3 class="text-lg font-bold mb-2">부회장</h3>
+                                <p>이영희 박사</p>
+                            </div>
+                            <div class="bg-secondary text-white p-5 rounded-lg shadow-lg">
+                                <h3 class="text-lg font-bold mb-2">총무장</h3>
+                                <p>박광수 박사</p>
+                            </div>
+                        </div>
+                        
+                        <!-- 各部门 -->
+                        <div class="grid grid-cols-3 gap-6 animate-fade-in" style="animation-delay: 0.2s">
+                            <div class="bg-white p-5 rounded-lg shadow-md">
+                                <h3 class="text-lg font-bold text-secondary mb-3">학술부</h3>
+                                <p class="text-gray-600 mb-2">장관: 정민수 교수</p>
+                                <ul class="text-gray-600 text-sm space-y-1">
+                                    <li>• 학술대회 운영</li>
+                                    <li>• 학술지 편집</li>
+                                    <li>• 연구과제 지원</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-white p-5 rounded-lg shadow-md">
+                                <h3 class="text-lg font-bold text-secondary mb-3">교육부</h3>
+                                <p class="text-gray-600 mb-2">장관: 황미경 교수</p>
+                                <ul class="text-gray-600 text-sm space-y-1">
+                                    <li>• 교육 프로그램 개발</li>
+                                    <li>• 교육 자료 제작</li>
+                                    <li>• 전문 인력 양성</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-white p-5 rounded-lg shadow-md">
+                                <h3 class="text-lg font-bold text-secondary mb-3">국제협력부</h3>
+                                <p class="text-gray-600 mb-2">장관: 강동원 박사</p>
+                                <ul class="text-gray-600 text-sm space-y-1">
+                                    <li>• 국제 학술 교류</li>
+                                    <li>• 해외 협력 관계 구축</li>
+                                    <li>• 국제会议 참가</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- 地方分会 -->
+                        <div class="mt-12 animate-fade-in" style="animation-delay: 0.3s">
+                            <h3 class="text-xl font-bold text-secondary text-center mb-6">지방 지부</h3>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                <div class="bg-white p-4 rounded-lg shadow-md text-center">
+                                    <p class="font-medium">평양 지부</p>
+                                </div>
+                                <div class="bg-white p-4 rounded-lg shadow-md text-center">
+                                    <p class="font-medium">남포 지부</p>
+                                </div>
+                                <div class="bg-white p-4 rounded-lg shadow-md text-center">
+                                    <p class="font-medium">함경 북도 지부</p>
+                                </div>
+                                <div class="bg-white p-4 rounded-lg shadow-md text-center">
+                                    <p class="font-medium">황해 남도 지부</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系信息 -->
+    <section id="contact" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-secondary">연락처</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-8"></div>
+                <p class="text-lg text-gray-600">조선컴퓨터학회와 연락하시려면 아래의 정보를 참고하시기 바랍니다.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+                <div class="space-y-6 animate-fade-in">
+                    <div class="flex items-start">
+                        <div class="bg-primary/10 text-primary p-3 rounded-full mr-4">
+                            <i class="fa fa-map-marker text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-secondary mb-1">주소</h3>
+                            <p class="text-gray-600">조선 민주주의 인민 공화국 평양시 중구 과학거리 123번</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-primary/10 text-primary p-3 rounded-full mr-4">
+                            <i class="fa fa-phone text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-secondary mb-1">전화</h3>
+                            <p class="text-gray-600">+850-2-123-4567</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-primary/10 text-primary p-3 rounded-full mr-4">
+                            <i class="fa fa-envelope text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-secondary mb-1">이메일</h3>
+                            <p class="text-gray-600">info@kcs.chosun.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-primary/10 text-primary p-3 rounded-full mr-4">
+                            <i class="fa fa-clock-o text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-secondary mb-1">운영 시간</h3>
+                            <p class="text-gray-600">월요일 - 금요일: 9:00 - 17:00</p>
+                            <p class="text-gray-600">주말 및 공휴일: 휴무</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="animate-fade-in" style="animation-delay: 0.2s">
+                    <!-- 联系表单 -->
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-bold text-secondary mb-6">문의하기</h3>
+                        <form>
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 mb-2">이름</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="이름을 입력하세요">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 mb-2">이메일</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="이메일을 입력하세요">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="subject" class="block text-gray-700 mb-2">주제</label>
+                                <select id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                                    <option value="">주제를 선택하세요</option>
+                                    <option value="membership">회원가입 문의</option>
+                                    <option value="conference">학술대회 문의</option>
+                                    <option value="publication">학술지 문의</option>
+                                    <option value="education">교육 프로그램 문의</option>
+                                    <option value="other">기타 문의</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 mb-2">메시지</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="메시지를 입력하세요"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-lg transition-custom">
+                                메시지 보내기 <i class="fa fa-paper-plane ml-2"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-secondary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="md:col-span-1">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fa fa-microchip text-accent text-2xl"></i>
+                        <h3 class="text-xl font-bold">조선컴퓨터학회</h3>
+                    </div>
+                    <p class="text-gray-300 text-sm">정보기술의 발전을 통한 국가발전과 인류혁명에 기여합니다</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">빠른 링크</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#about" class="hover:text-accent transition-custom">소개</a></li>
+                        <li><a href="#activities" class="hover:text-accent transition-custom">주요활동</a></li>
+                        <li><a href="#organization" class="hover:text-accent transition-custom">조직구성</a></li>
+                        <li><a href="#contact" class="hover:text-accent transition-custom">연락처</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">자료실</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-accent transition-custom">학회지</a></li>
+                        <li><a href="#" class="hover:text-accent transition-custom">연구보고서</a></li>
+                        <li><a href="#" class="hover:text-accent transition-custom">교육자료</a></li>
+                        <li><a href="#" class="hover:text-accent transition-custom">공지사항</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">소셜 미디어</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-white/10 hover:bg-white/20 w-10 h-10 rounded-full flex items-center justify-center transition-custom">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                        <a href="#" class="bg-white/10 hover:bg-white/20 w-10 h-10 rounded-full flex items-center justify-center transition-custom">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                        <a href="#" class="bg-white/10 hover:bg-white/20 w-10 h-10 rounded-full flex items-center justify-center transition-custom">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="bg-white/10 hover:bg-white/20 w-10 h-10 rounded-full flex items-center justify-center transition-custom">
+                            <i class="fa fa-youtube-play"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/20 pt-8 text-center text-gray-400 text-sm">
+                <p>© 2023 조선컴퓨터학회. 모든 권리 보유.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-primary/90">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // 移动端菜单切换
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuBtn.innerHTML = '<i class="fa fa-bars text-xl"></i>';
+            } else {
+                menuBtn.innerHTML = '<i class="fa fa-times text-xl"></i>';
+            }
+        });
+        
+        // 导航栏滚动效果
+        const navbar = document.getElementById('navbar');
+        let lastScrollTop = 0;
+        
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 100) {
+                navbar.classList.add('py-2', 'shadow-lg');
+                navbar.classList.remove('py-3', 'shadow-md');
+            } else {
+                navbar.classList.add('py-3', 'shadow-md');
+                navbar.classList.remove('py-2', 'shadow-lg');
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+        
+        // 返回顶部按钮
+        const backToTopBtn = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.remove('opacity-0', 'invisible');
+                backToTopBtn.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopBtn.classList.add('opacity-0', 'invisible');
+                backToTopBtn.classList.remove('opacity-100', 'visible');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // 关闭移动菜单（如果打开）
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    menuBtn.innerHTML = '<i class="fa fa-bars text-xl"></i>';
+                }
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // 元素进入视口时的动画
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.animate-fade-in');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // 初始设置
+        document.querySelectorAll('.animate-fade-in').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        });
+        
+        // 页面加载和滚动时触发动画
+        window.addEventListener('load', animateOnScroll);
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
+</body>
+</html>
