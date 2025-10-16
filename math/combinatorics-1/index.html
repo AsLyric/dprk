@@ -1,0 +1,1068 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://aslyric.github.io/math/combinatorics-1/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title>组合数学入门 - 笔记</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="笔记" class="md-header__button md-logo" aria-label="笔记" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            笔记
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              组合数学入门
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/aslyric/dprk" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../contest/2510/" class="md-tabs__link">
+          
+  
+  
+  比赛
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../dp/optimization-of-dp-1/" class="md-tabs__link">
+          
+  
+  
+  动态规划
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ds/segment-tree/" class="md-tabs__link">
+          
+  
+  
+  数据结构
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../graph/modulo-shortest-path/" class="md-tabs__link">
+          
+  
+  
+  图论
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="笔记" class="md-nav__button md-logo" aria-label="笔记" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    笔记
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/aslyric/dprk" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    首页
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    比赛
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            比赛
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contest/2510/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2510
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    动态规划
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            动态规划
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dp/optimization-of-dp-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    状态优化
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dp/optimization-of-dp-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    转移优化
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    数据结构
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            数据结构
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ds/segment-tree/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    线段树进阶
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ds/ds-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    杂题
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    图论
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            图论
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph/modulo-shortest-path/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    同余最短路
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph/bipartite-graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    二分图
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph/network-flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    网络流
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph/graph-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    杂题
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      组合恒等式（待补充）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="组合恒等式（待补充）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hdu6333-problem-b-harvest-of-apples" class="md-nav__link">
+    <span class="md-ellipsis">
+      HDU6333 Problem B. Harvest of Apples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lucas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lucas 定理
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      模 2 意义下的组合数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="模 2 意义下的组合数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#p3773-ctsc2017" class="md-nav__link">
+    <span class="md-ellipsis">
+      P3773 [CTSC2017] 吉夫特
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arc137d-prefix-xors" class="md-nav__link">
+    <span class="md-ellipsis">
+      ARC137D Prefix XORs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cf1713f-lost-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      CF1713F Lost Array
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/aslyric/dprk/edit/main/docs/math/combinatorics-1.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="_1">组合数</h1>
+<h2 id="_2">组合恒等式（待补充）</h2>
+<p>可以结合杨辉三角记忆。</p>
+<ol>
+<li>斜线：<span class="arithmatex">\(<span class="arithmatex">\(\sum_{i=0}^n {k+i \choose i}={k+n+1 \choose n}\)</span>\)</span></li>
+<li>列：<span class="arithmatex">\(<span class="arithmatex">\(\sum_{i=0}^n {n \choose m}={n+1 \choose m+1}\)</span>\)</span></li>
+<li>
+<p>行：</p>
+<p>设 <span class="arithmatex">\(S(n,m)=\sum_{i=0}^m {n \choose m}\)</span>，则有：
+<span class="arithmatex">\(<span class="arithmatex">\(S(n,m)=S(n,m-1)+{n \choose m}\\S(n,m)=2S(n-1,m)-{n-1 \choose m}\)</span>\)</span></p>
+</li>
+</ol>
+<h4 id="hdu6333-problem-b-harvest-of-apples">HDU6333 Problem B. Harvest of Apples</h4>
+<p>对于每个询问，求：
+<span class="arithmatex">\(<span class="arithmatex">\(f(n,m)=\sum_{i=0}^m {n \choose i}\)</span>\)</span></p>
+<p>发现每次左右端点的修改都是 <span class="arithmatex">\(O(1)\)</span> 的，可以用莫队做。</p>
+<p>我写的时候莫队的排序函数有问题，上一次还是<a href="https://www.luogu.com.cn/problem/P1903">P1903 [国家集训队] 数颜色 / 维护队列</a>。</p>
+<h2 id="lucas">Lucas 定理</h2>
+<p><span class="arithmatex">\(p\)</span> 为质数。</p>
+<div class="arithmatex">\[{n \choose k} \equiv {\lfloor \frac{n}{p} \rfloor \choose \lfloor\frac{k}{p} \rfloor}{n \mod p \choose k \mod p}\pmod p\]</div>
+<h2 id="2">模 2 意义下的组合数</h2>
+<h4 id="p3773-ctsc2017">P3773 [CTSC2017] 吉夫特</h4>
+<h4 id="arc137d-prefix-xors">ARC137D Prefix XORs</h4>
+<p>https://www.luogu.com.cn/article/g3a5nfvw</p>
+<p>两个套路拼好题。</p>
+<p>考虑 <span class="arithmatex">\(a_{0,i}\)</span> 对 <span class="arithmatex">\(a_{m,n}\)</span> 的贡献，即为计算 <span class="arithmatex">\((1,i)\)</span> 到 <span class="arithmatex">\((m,n)\)</span> 的路径数：<span class="arithmatex">\({m+n-i-1 \choose n-i}\)</span> 。</p>
+<p>然后用 Lucas 定理可以发现 <span class="arithmatex">\({a \choose b}\)</span> 为奇数当且仅当二进制下 <span class="arithmatex">\(b\)</span> 为 <span class="arithmatex">\(a\)</span> 的子集。（<a href="https://www.luogu.com.cn/problem/P3773">P3773 [CTSC2017] 吉夫特</a>）</p>
+<p>为了方便进行高位前缀和，将序列逆序（<span class="arithmatex">\(i\)</span> 到 <span class="arithmatex">\(n-i\)</span>），<span class="arithmatex">\(a_{0,i}\)</span> 的贡献为 <span class="arithmatex">\({m+i-1 \choose i} \bmod 2\)</span>，为 <span class="arithmatex">\(1\)</span> 当且仅当 <span class="arithmatex">\(i\)</span> 为 <span class="arithmatex">\(m-1\)</span> 补集的子集，然后枚举补集暴力转移可以改为 SOSDP。</p>
+<h4 id="cf1713f-lost-array">CF1713F Lost Array</h4>
+<p>https://www.luogu.com.cn/article/40usr56d</p>
+<p>本来在想怎么消元，但看到了比较强的一种做法，考虑 <span class="arithmatex">\(a\)</span> 是怎么推出来 <span class="arithmatex">\(b\)</span> 的，先把 <span class="arithmatex">\(a\)</span> 和副对角线上的数从右到左重新编号为 <span class="arithmatex">\(0\sim n-1\)</span>。</p>
+<p>发现 <span class="arithmatex">\(a_i\)</span> 走到副对角线上的 <span class="arithmatex">\(k\)</span> 方案数分别是 <span class="arithmatex">\({i \choose k}\)</span> ，根据 Lucas 定理可知当且仅当 <span class="arithmatex">\(i\)</span> 为 <span class="arithmatex">\(k\)</span> 的超集对 <span class="arithmatex">\(k\)</span> 有贡献。</p>
+<p>副对角线上的 <span class="arithmatex">\(k\)</span> 走到 <span class="arithmatex">\(b_j\)</span> 同理，当且仅当 <span class="arithmatex">\(k\)</span> 为 <span class="arithmatex">\(j\)</span> 子集。</p>
+<blockquote>
+<p>关于子集异或和的逆是子集异或和，证明如下：</p>
+<p>子集反演：<span class="arithmatex">\(f(S) = \sum \limits_{T \subseteq S} g(T) \Rightarrow g(S) = \sum \limits_{T \subseteq S} (-1)^{|S| - |T|} f(T)\)</span>。</p>
+<p>对于异或，由于 <span class="arithmatex">\(x \oplus x=0\)</span>，其实异或的逆运算就是异或，那么有：<span class="arithmatex">\(f(S) = \oplus _{T \subseteq S} g(T) \Rightarrow g(S) = \oplus_{T \subseteq S}f(T)\)</span>，得证。</p>
+<p>超集异或和的逆是超集异或和同理。</p>
+</blockquote>
+<p>我们要根据 <span class="arithmatex">\(b\)</span> 反推 <span class="arithmatex">\(a\)</span>，先求子集异或和的逆（子集异或和），再求超集异或和的逆（超集异或和）。</p>
+<p>SOSDP时，因为我们无法得知 <span class="arithmatex">\(b_{n\sim all}\)</span> 的值，集合只枚举到 <span class="arithmatex">\(n-1\)</span>。</p>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="o">=</span><span class="mf">6e5</span><span class="o">+</span><span class="mi">5</span><span class="p">;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="n">f</span><span class="p">[</span><span class="n">N</span><span class="p">],</span><span class="n">K</span><span class="p">;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="n">ios</span><span class="o">::</span><span class="n">sync_with_stdio</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="n">cin</span><span class="p">.</span><span class="n">tie</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="n">cout</span><span class="p">.</span><span class="n">tie</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">n</span><span class="p">;</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="n">K</span><span class="o">=</span><span class="n">__lg</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">K</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="k">if</span><span class="p">((</span><span class="n">j</span><span class="o">&gt;&gt;</span><span class="n">i</span><span class="p">)</span><span class="o">&amp;</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">^=</span><span class="n">f</span><span class="p">[</span><span class="n">j</span><span class="o">^</span><span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="n">i</span><span class="p">)];</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">K</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="k">if</span><span class="p">((</span><span class="n">j</span><span class="o">&gt;&gt;</span><span class="n">i</span><span class="p">)</span><span class="o">&amp;</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="n">j</span><span class="o">^</span><span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="n">i</span><span class="p">)]</span><span class="o">^=</span><span class="n">f</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="n">n</span><span class="mi">-1</span><span class="p">;</span><span class="n">i</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">--</span><span class="p">)</span><span class="w"> </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&lt;&lt;</span><span class="s">&quot; &quot;</span><span class="p">;</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>本题的启发在于在初始状态和结果状态间寻找中间状态。</p>
+<h1 id="_3">卡特兰数</h1>
+<p>（必会）常见公式： 
+<span class="arithmatex">\(<span class="arithmatex">\(H_n={2n \choose n}-{2n \choose n-1}\)</span>\)</span></p>
+<h2 id="_4">格路计数</h2>
+<p>这个结合图还是很好理解的，可以去看看别的博客，不过有很多变体。</p>
+<p>从 <span class="arithmatex">\((0,0)\)</span> 走到 <span class="arithmatex">\((n,m)\)</span>，不碰到直线 <span class="arithmatex">\(y=x+b\)</span> 的方案数：</p>
+<div class="arithmatex">\[{n+m \choose n}-{n+m \choose n+b}\]</div>
+<p>意义为沿着直线翻折，越过直线的路径对称域从翻折顶点到终点的路径。（翻折到的点以 <span class="arithmatex">\(y=x+b\)</span> 和 <span class="arithmatex">\(x=n\)</span> 的交点为横坐标，<span class="arithmatex">\(y=x+b\)</span> 和 <span class="arithmatex">\(y=m\)</span> 交点为纵坐标，<span class="arithmatex">\((m-b,n+b)\)</span>）</p>
+<h4 id="agc021e-ball-eat-chameleons">AGC021E Ball Eat Chameleons</h4>
+<p>分讨，<a href="https://www.luogu.com.cn/article/xr7hzcao">兔的题解</a>，<a href="https://www.luogu.com.cn/article/tlczlmkg">另解</a>。</p>
+<p>设红、蓝球的吃的情况为 <span class="arithmatex">\((R,B)\)</span>。</p>
+<ol>
+<li><span class="arithmatex">\(K&lt;n\)</span> 或 <span class="arithmatex">\(R&lt;B\)</span>，一定无解。</li>
+<li><span class="arithmatex">\(R\geq n+B\)</span>，一定有解。</li>
+<li><span class="arithmatex">\(R=B\)</span>，那么最后吃的一定是 <code>B</code>，转化为第四种情况的 <span class="arithmatex">\((R,B-1)\)</span>。</li>
+<li>否则 <span class="arithmatex">\(B &lt; R&lt; n+B\)</span>，恰有 <span class="arithmatex">\(R-B\)</span> 只小粉兔多吃了一个 <code>R</code>。
+    其它 <span class="arithmatex">\(n-(R-B)\)</span> 只小粉兔红、蓝球吃得一样多，最后吃的一定是 <code>B</code>，我们让它们按 <code>RBRB</code> 的顺序吃（不符合的 <code>RB</code> 对扔给多吃了 <code>R</code> 的小粉兔）。
+    也就是至少有 <span class="arithmatex">\(n-(R-B)\)</span> 对 <code>RB</code> 的匹配，转化为括号匹配，那么 <code>RB</code> 序列每个前缀，<code>B</code> 最多比 <code>R</code> 多 <span class="arithmatex">\(B-(n-(R-B))=R-n\)</span> 个（式子意为无需参加匹配的蓝球数量）。
+    这是经典的格路计数问题，转化为从 <span class="arithmatex">\((0,0)\)</span> 向右向上到 <span class="arithmatex">\((B,R)\)</span> ，不碰到直线 <span class="arithmatex">\(y=x-(R-n)-1\)</span> 的方案数。</li>
+</ol>
+<h1 id="_5">斯特林数</h1>
+<h2 id="_6">第二类斯特林数</h2>
+<p>在小球与盒子那道模板题中见到的，<strong><span class="arithmatex">\(n \brace m\)</span> 表示将 <span class="arithmatex">\(n\)</span> 个互相区分的元素，划分为 <span class="arithmatex">\(m\)</span> 个互不区分的非空子集的方案数</strong>。</p>
+<p>（必会）递推式： 
+<span class="arithmatex">\(<span class="arithmatex">\({n \brace m}=m {n-1 \brace m}+{n-1 \brace m-1}\)</span>\)</span></p>
+<p>通项公式：<span class="arithmatex">\(n,m\)</span> 较大时使用，需要二项式反演来证，参 OI Wiki。</p>
+<div class="arithmatex">\[{n \brace m}=\sum\limits_{i=0}^m\dfrac{(-1)^{m-i}i^n}{i!(m-i)!}\]</div>
+<h3 id="_7">应用</h3>
+<ol>
+<li>若要求非空子集互相区分，直接乘上 <span class="arithmatex">\(m!\)</span> 即可。</li>
+</ol>
+<h1 id="_8">组合意义</h1>
+<h4 id="p4769-noi2018">P4769 [NOI2018] 冒泡排序</h4>
+<p><a href="https://www.luogu.com.cn/article/7chydorq">https://www.luogu.com.cn/article/7chydorq</a>（略有瑕疵，分讨第二种当前可以填 <span class="arithmatex">\(mx+1\sim n\)</span>，请看评论。）</p>
+<p>这题挺难想的，DP转为格路计数的模型，然后用组合式子求解。而有些题是有一些奇葩的限制，或是需要化简，需要用到组合意义的模型，比如下面几道。</p>
+<h4 id="cf1842g-tenzing-and-random-operations">CF1842G Tenzing and Random Operations</h4>
+<h4 id="agc001e-bbq-hard">AGC001E BBQ Hard</h4>
+<h1 id="_9">二项式定理</h1>
+<p>内容：
+<span class="arithmatex">\(<span class="arithmatex">\((x+y)^n=\sum_{k=0}^n\ C{_n^k} x^k y^{n-k} = \sum_{k=0}^n\ C{_n^k} x^{n-k} y^k\)</span>\)</span></p>
+<h2 id="_10">应用：化简式子</h2>
+<p>形式 <span class="arithmatex">\(\sum_{k=0}^n\ C{_n^k} x^k y^{n-k}\)</span> 要想到化为左式。</p>
+<p>对于形式 <span class="arithmatex">\(\sum_{k=0}^n C_n^k x^k\)</span>，要想到化为 <span class="arithmatex">\(\sum_{k=0}^n C_n^k x^k 1^{n-k}=(x+1)^n\)</span>。</p>
+<h1 id="_11">二项式反演</h1>
+<p>如果满足 <span class="arithmatex">\(<span class="arithmatex">\(f(n) = \sum_{i = 0}^{n} {n \choose i} g(i)\)</span>\)</span></p>
+<p>那么有
+<span class="arithmatex">\(<span class="arithmatex">\(g(n) = \sum_{i=0}^{n} {n \choose i} (-1)^{n-i} f(i)\)</span>\)</span></p>
+<p>如果满足 <span class="arithmatex">\(<span class="arithmatex">\(f(n)=\sum_{i=n}^m{i \choose n}g(i)\)</span>\)</span> 那么有 <span class="arithmatex">\(<span class="arithmatex">\(g(n)=\sum_{i=n}^m{i \choose n}(-1)^{i-n}f(i)\)</span>\)</span></p>
+<h4 id="_12">鸣谢</h4>
+<ol>
+<li>[Slide] 组合计数问题的常用技巧-彭博-2021（部分题目）</li>
+</ol>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年10月16日 12:33:24 UTC">2025年10月16日</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="创建日期">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年10月16日 12:33:24 UTC">2025年10月16日</span>
+  </span>
+
+    
+    
+    
+      
+  <span class="md-source-file__fact">
+    
+      
+  <span class="md-icon" title="贡献者">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
+  </span>
+  <span>GitHub</span>
+
+    
+    <nav>
+      
+        <a href="https://github.com/AsLyric" class="md-author" title="@AsLyric">
+          
+          <img src="https://avatars.githubusercontent.com/u/82215143?v=4&size=72" alt="AsLyric">
+        </a>
+      
+        <a href="https://github.com/web-flow" class="md-author" title="@web-flow">
+          
+          <img src="https://avatars.githubusercontent.com/u/19864447?v=4&size=72" alt="web-flow">
+        </a>
+      
+      
+      
+    </nav>
+  </span>
+
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.path", "toc.follow", "content.action.edit", "content.code.copy"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
