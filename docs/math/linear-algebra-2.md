@@ -1,12 +1,3 @@
----
-title: Matrix-Tree 与 LGV 与 BEST
-published: 2025-08-14
-updated: 2025-08-15
-tags: [数学, 线性代数]
-category: 信息学
-draft: false 
----
-
 祝我一辈子都不会考到的系列。
 
 ## Matrix-Tree 定理

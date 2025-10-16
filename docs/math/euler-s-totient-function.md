@@ -1,13 +1,4 @@
----
-title: 欧拉函数
-published: 2025-01-22
-updated: 2025-09-29
-tags: [数学, 数论]
-category: 信息学
-draft: false
----
-
-# 欧拉函数
+## 欧拉函数
 
 欧拉函数 $\varphi(n)$ 定义为：从 $1$ 到 $n$ 中与 $n$ 互质的数的个数。
 
@@ -15,7 +6,7 @@ draft: false
 
 $$ \varphi(n) = n \prod_{i=1}^k \frac{p_i-1}{p_i}$$
 
-# 性质
+## 性质
 
 1. $\varphi(1) = 1$。
 2. 对于任意质数 $p$，有 $\varphi(p) = p - 1$。
@@ -23,7 +14,7 @@ $$ \varphi(n) = n \prod_{i=1}^k \frac{p_i-1}{p_i}$$
 
 欧拉函数是积性函数，但**不是完全积性函数**。
 
-# 计算
+## 计算
 
 由于是积性函数，可以由最上面那个式子，通过线性筛法在 $O(n)$ 时间内计算。
 
@@ -45,12 +36,12 @@ for(int i=2;i<=n;i++) {
 }
 ```
 
-# 欧拉反演
+## 欧拉反演
 
 对于恒等函数 $\text{id}(n) = n$，有：
 
 $$ n = \text{id}(n) = (\varphi \star I)(n) = \sum_{d | n} \varphi(d) $$
 
-# 例题
+## 例题
 
 #### [P2398 GCD SUM](https://www.luogu.com.cn/problem/P2398)

@@ -72,3 +72,17 @@ nav:
     - 二分图: graph/bipartite-graph.md
     - 网络流: graph/network-flow.md
     - 杂题: graph/graph-1.md
+  - 数学:
+    - 数论:
+      欧拉定理与费马小定理: math/dirichlet-convolution.md
+    - 数论函数:
+      欧拉函数: math/euler-s-totient-function.md
+      狄利克雷卷积: math/dirichlet-convolution.md
+    - 组合数学:
+      组合数学入门: math/combinatorics-1.md
+      容斥入门: math/inclusion-exclusion-principle.md
+      组合计数杂题: math/combinatorics-2.md
+    - 线性代数:
+      线性代数入门: math/linear-algebra-1.md
+      Matrix-Tree 与 LGV 与 BEST: math/linear-algebra-2.md
+      矩阵乘法杂题: math/matrix-multiplication.md

@@ -1,12 +1,3 @@
----
-title: 组合计数好题（一）
-published: 2025-08-19
-updated: 2025-09-29
-tags: [DP, 数学, 组合数学, 题集]
-category: 信息学
-draft: false 
----
-
 包含一些 DP 的题目，比较套路的转化用 $\fcolorbox{red}{while}{red block}$ 标出。
 
 #### CF1327F AND Segments
