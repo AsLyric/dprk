@@ -1,0 +1,74 @@
+site_name: 笔记
+
+site_url: https://aslyric.github.io/
+
+repo_url: https://github.com/aslyric/dprk
+
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: zh
+  icon:
+    repo: fontawesome/brands/git-alt
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.path
+    - toc.follow
+    - content.action.edit
+    - content.code.copy
+
+markdown_extensions:
+  - pymdownx.superfences
+  # Code
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  # Admonitions
+  - admonition
+  - pymdownx.details
+  # KaTex
+  - pymdownx.arithmatex:
+      generic: true
+  # Content Tabs
+  - pymdownx.tabbed:
+      alternate_style: true
+  # Footnotes
+  - footnotes
+
+extra_javascript:
+  - javascripts/katex.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+
+extra_css:
+  - https://unpkg.com/katex@0/dist/katex.min.css
+
+plugins:
+  - git-revision-date-localized:
+      enable_creation_date: true
+  - git-committers:
+      repository: aslyric/dprk
+      branch: main
+  
+nav:
+  - 首页: index.md
+  - 比赛:
+    - 2510: contest/2510.md
+  - 动态规划:
+    - 状态优化: dp/optimization-of-dp-1.md
+    - 转移优化: dp/optimization-of-dp-2.md
+  - 数据结构:
+    - 线段树进阶: ds/segment-tree.md
+    - 杂题: ds/ds-1.md
+  - 图论:
+    - 同余最短路: graph/modulo-shortest-path.md
+    - 二分图: graph/bipartite-graph.md
+    - 网络流: graph/network-flow.md
+    - 杂题: graph/graph-1.md
